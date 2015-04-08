@@ -57,7 +57,7 @@ public class ReversePolishNotation {
 				}
 			});
 
-			/* Uncomment below to support "−" as multiplication */
+			/* Uncomment below to support "−" as subtraction */
 			// OPERATORS.put("−", new Operator() {
 			// @Override
 			// public double operate(Double... operands) {
@@ -171,9 +171,8 @@ public class ReversePolishNotation {
 	public static void main(String[] args) {
 		System.out.println("Reverse Polish Notation Calculator");
 		System.out.println("Supported Operations : ");
-		Map<String, Operator> supportedOperators = Operator.getOperators();
 		Random r = new Random();
-		for (Entry<String, Operator> entry : supportedOperators.entrySet()) {
+		for (Entry<String, Operator> entry : Operator.getOperators().entrySet()) {
 			Operator operator = entry.getValue();
 			Double[] operands = new Double[operator.getNumArguments()];
 			for (int i = 0; i < operands.length; i++) {
